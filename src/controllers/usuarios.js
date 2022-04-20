@@ -103,6 +103,7 @@ const usuarioDelete = async (req, res) => {
     console.log("DELETE /api/usuarios")
 
     const {id}= req.params;
+    const {uid} = req;
 
     //Eliminar fisicamente el record
     //const usuario = await Usuarios.findByIdAndDelete(id);

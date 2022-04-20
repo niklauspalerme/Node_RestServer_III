@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const { config } = require('dotenv');
 
 
-
 /////////////////////////////////////////////////////////////
 // Funciones
 
