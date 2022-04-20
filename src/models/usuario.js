@@ -44,7 +44,9 @@ const UsuarioSchema = Schema({
 //Sobreescribimo el JSON de MongoDB del Schema
 //Para que solo retornemos los campos necesarios
 UsuarioSchema.methods.toJSON = function() {
-    const { __v, password, ...user } = this.toObject();
+    const { __v, password, _id,...user } = this.toObject();
+    user.uid = _id;
+
     return user
 }
 
