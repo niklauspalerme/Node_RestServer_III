@@ -1,3 +1,4 @@
 PORT=3030
 MONGODB_CNN=mongodb+srv://nicoroot:12345@cluster0.anjd2.mongodb.net/cafeDB
 MONGODB_LOCAL=mongodb://localhost:27017/cafeDB
+SECRETKEY=EstoEsMiPublicKey12345

@@ -2,6 +2,7 @@
 // Importaciones
 
 const bcrypt = require("bcryptjs/dist/bcrypt");
+const { generarJWT } = require("../helpers/generar-JWT");
 const { Usuarios } = require("../models/usuario");
 
 
@@ -38,16 +39,22 @@ const login = async (req,res) => {
                 msg: "User/Password are invalid. Please try again (Password)"
         })
 
+        //Generar JWT
+
+        const token = await generarJWT(usuario.id);
+
 
         res.json({
-           "msg": "POST /api/auth/logi"
+           "msg": "POST /api/auth/logi",
+           usuario,
+           token
         })
        
    } catch (error) {
         res.status(500).json({
             "msg": error
         })
-   }
+   }v
 
 }
 

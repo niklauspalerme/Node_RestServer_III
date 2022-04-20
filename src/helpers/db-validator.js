@@ -8,7 +8,7 @@ const { Usuarios } = require('../models/usuario');
 
 
 /////////////////////////////////////////////////////////////
-// Función
+// Funciones
 
 const esRoleValido = async(rol = '') => {
     const exisRol = await Roles.findOne({ rol });
@@ -34,8 +34,6 @@ const existeUsuarioPorID = async (id) => {
     if (!existID) {
         throw new Error("The id doesn't exist. Please try with another one");
     }
-
-
 
 }
 
