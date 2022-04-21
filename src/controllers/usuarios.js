@@ -100,22 +100,24 @@ const usuarioPut = async(req = request, res) => {
 //DELETE /api/usuarios
 const usuarioDelete = async (req, res) => {
 
-    console.log("DELETE /api/usuarios")
+    console.log("DELETE /api/usuarios/:id")
 
     const {id}= req.params;
-    const {uid} = req;
+    const usuarioAutenticado = req.usuario;
 
-    //Eliminar fisicamente el record
+    // #1 - Eliminar fisicamente el record
     //const usuario = await Usuarios.findByIdAndDelete(id);
 
-    //Cambiamos el estado = false
+    // #2 - Cambiamos el estado = false
     //Es para mantener la integridad de los datos
+
+
     const usuario = await Usuarios.findByIdAndUpdate(id, {estado: false});
 
-
-    res.status(200).json({ 
+   return  res.status(200).json({ 
         "Message": "DELETE /api/usuarios",
-        usuario
+        usuario,
+        usuarioAutenticado
     });
 }
 
